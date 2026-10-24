@@ -60,8 +60,17 @@ def get_cluster_details():
 
     # Requirement 1.3 and 1.4
     # Use rbac_api to get roles and rolebindings
-    output['roles'] = rbac_api.list_namespaced_role(namespace)
-    output['rolebindings'] = rbac_api.list_namespaced_role_binding(namespace)
+    role_names = []
+    namespaced_roles = rbac_api.list_namespaced_role(namespace)
+    for namespaced_role in namespaced_roles.items:
+        role_names.append(namespaced_role.metadata.name)
+    output['roles'] = role_names
+
+    rolebinding_names = []
+    namespaced_rolebindings = rbac_api.list_namespaced_role_binding(namespace)
+    for namespaced_rolebinding in namespaced_rolebindings.items:
+        rolebinding_names.append(namespaced_rolebinding.metadata.name)
+    output['rolebindings'] = rolebinding_names
 
     obj_to_return = json.dumps(output)
     return obj_to_return
