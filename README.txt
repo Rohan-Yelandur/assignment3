@@ -27,7 +27,7 @@ Build container:
 -----------------
 
 # TODO : Requirement 1.1
-docker build -t <> .
+docker build -t rry256-assignment3:latest .
 
 
 Install the greetings helm chart:
