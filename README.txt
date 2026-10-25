@@ -1,3 +1,9 @@
+Name: Rohan Yelandur
+
+EID: rry256
+
+Comments: Project was fun!
+
 Setup
 -----
 Install Minikube
