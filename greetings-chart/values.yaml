@@ -1,4 +1,7 @@
 # Requirement 2.1
-image: ""
+image: "rry256-assignment3:latest"
 
 # Add variables (Requirement 2.2)
+replicas: 1
+greeting: 'Hello World'
+nodePort: 30000
